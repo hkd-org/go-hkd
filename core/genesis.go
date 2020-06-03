@@ -23,16 +23,17 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/hkd-org/go-hkd/core/types/devotedb"
-	"github.com/hkd-org/go-hkd/crypto"
-	"github.com/hkd-org/go-hkd/p2p/enode"
-	"github.com/hkd-org/go-hkd/trie"
 	"io"
 	"math/big"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	"github.com/hkd-org/go-hkd/core/types/devotedb"
+	"github.com/hkd-org/go-hkd/crypto"
+	"github.com/hkd-org/go-hkd/p2p/enode"
+	"github.com/hkd-org/go-hkd/trie"
 
 	"github.com/hkd-org/go-hkd/common"
 	"github.com/hkd-org/go-hkd/common/hexutil"
@@ -324,7 +325,7 @@ func DefaultGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     configMainnet,
 		Nonce:      1,
-		Timestamp:  1566225000,
+		Timestamp:  1591164000,
 		GasLimit:   10000000,
 		Difficulty: big.NewInt(1),
 		Alloc:      alloc,

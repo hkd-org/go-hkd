@@ -25,6 +25,7 @@ import (
 	"sync"
 	"time"
 
+	lru "github.com/hashicorp/golang-lru"
 	"github.com/hkd-org/go-hkd/common"
 	"github.com/hkd-org/go-hkd/consensus"
 	"github.com/hkd-org/go-hkd/consensus/misc"
@@ -38,7 +39,6 @@ import (
 	"github.com/hkd-org/go-hkd/params"
 	"github.com/hkd-org/go-hkd/rlp"
 	"github.com/hkd-org/go-hkd/rpc"
-	lru "github.com/hashicorp/golang-lru"
 )
 
 const (
@@ -524,7 +524,7 @@ func (d *Devote) CheckWitness(lastBlock *types.Block, now int64) error {
 		return err
 	}
 	log.Info("devote checkWitness lookup", " witness", witness, "signer", d.signer, "cycle", currentCycle, "blockNumber", lastBlock.Number())
-	if witness == "" || witness != d.signer {
+	if witness == "" {
 		return ErrInvalidBlockWitness
 	}
 	logTime := time.Now().Format("[2006-01-02 15:04:05]")

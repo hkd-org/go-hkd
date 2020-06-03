@@ -513,7 +513,7 @@ var (
 	ListenPortFlag = cli.IntFlag{
 		Name:  "port",
 		Usage: "Network listening port",
-		Value: 21212,
+		Value: 20202,
 	}
 	BootnodesFlag = cli.StringFlag{
 		Name:  "bootnodes",
@@ -741,7 +741,6 @@ func setMasternode(ctx *cli.Context, cfg *p2p.Config) {
 		cfg.IsMasternode = true
 	}
 }
-
 
 // setBootstrapNodesV5 creates a list of bootstrap nodes from the command line
 // flags, reverting to pre-configured ones if none have been specified.
