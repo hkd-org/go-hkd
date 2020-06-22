@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the go-etherzero library. If not, see <http://www.gnu.org/licenses/>.
 
-//The Masternode Class. For managing the InstantTX process. It contains the input of the 20000ETZ, signature to prove
+//The Masternode Class. For managing the InstantTX process. It contains the input of the 20000HKD, signature to prove
 // it's the one who own that ip address and code for calculating the payment election.
 
 package devotedb
@@ -24,14 +24,14 @@ import (
 	"fmt"
 	"sync"
 
+	lru "github.com/hashicorp/golang-lru"
 	"github.com/hkd-org/go-hkd/common"
 	"github.com/hkd-org/go-hkd/crypto/sha3"
 	"github.com/hkd-org/go-hkd/ethdb"
+	"github.com/hkd-org/go-hkd/log"
 	"github.com/hkd-org/go-hkd/params"
 	"github.com/hkd-org/go-hkd/rlp"
 	"github.com/hkd-org/go-hkd/trie"
-	"github.com/hashicorp/golang-lru"
-	"github.com/hkd-org/go-hkd/log"
 )
 
 type DevoteDB struct {

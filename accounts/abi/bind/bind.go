@@ -1,22 +1,22 @@
-// Copyright 2016 The go-etherzero Authors
-// This file is part of the go-etherzero library.
+// Copyright 2016 The go-hkd Authors
+// This file is part of the go-hkd library.
 //
-// The go-etherzero library is free software: you can redistribute it and/or modify
+// The go-hkd library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-etherzero library is distributed in the hope that it will be useful,
+// The go-hkd library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-etherzero library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-hkd library. If not, see <http://www.gnu.org/licenses/>.
 
 // Package bind generates Ethereum contract Go bindings.
 //
-// Detailed usage document and tutorial available on the go-etherzero Wiki page:
+// Detailed usage document and tutorial available on the go-hkd Wiki page:
 // https://github.com/hkd-org/go-hkd/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts
 package bind
 

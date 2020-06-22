@@ -212,7 +212,7 @@
   {
     "constant": true,
     "inputs": [],
-    "name": "etzMin",
+    "name": "hkdMin",
     "outputs": [
       {
         "name": "",
@@ -331,7 +331,7 @@
   {
     "constant": true,
     "inputs": [],
-    "name": "etzPerNode",
+    "name": "hkdPerNode",
     "outputs": [
       {
         "name": "",

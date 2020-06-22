@@ -180,7 +180,7 @@ func (self *MasternodeManager) masternodeLoop() {
 			address := self.NodeAccount
 			stateDB, _ := self.eth.blockchain.State()
 			if stateDB.GetBalance(address).Cmp(big.NewInt(1e+16)) < 0 {
-				fmt.Println(logTime, "Failed to deposit 0.01 etz to ", address.String())
+				fmt.Println(logTime, "Failed to deposit 0.01 hkd to ", address.String())
 				break
 			}
 			gasPrice, err := self.eth.APIBackend.gpo.SuggestPrice(context.Background())

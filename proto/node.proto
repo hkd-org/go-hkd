@@ -20,14 +20,14 @@ service Node {
         };
     }
 
-    // Retrieve information about the genesis of Etherzero 2.0.
+    // Retrieve information about the genesis of Hkd 2.0.
     rpc GetGenesis(google.protobuf.Empty) returns (Genesis) {
         option (google.api.http) = {
             get: "node/genesis"
         };
     }
 
-    // Retrieve information about the running Etherzero 2.0 node.
+    // Retrieve information about the running Hkd 2.0 node.
     rpc GetVersion(google.protobuf.Empty) returns (Version) {
         option (google.api.http) = {
             get: "node/version"
@@ -52,12 +52,12 @@ message SyncStatus {
     bool syncing = 1;
 }
 
-// Information about the genesis of Etherzero 2.0.
+// Information about the genesis of Hkd 2.0.
 message Genesis {
     // UTC time specified in the chain start event in the deposit contract.
     google.protobuf.Timestamp genesis_time = 1;
 
-    // Address of the deposit contract in the Etherzero 1 chain.
+    // Address of the deposit contract in the Hkd 1 chain.
     bytes deposit_contract_address = 2;
 }
 

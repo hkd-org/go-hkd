@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract Masternode {
 
-    uint public constant etzPerNode = 20000 * 10 ** 18;
-    uint public constant etzMin = 10 ** 16;
+    uint public constant hkdPerNode = 20000 * 10 ** 18;
+    uint public constant hkdMin = 10 ** 16;
     uint public constant blockPingTimeout = 3600;
 
     bytes8 public lastId;
@@ -59,7 +59,7 @@ contract Masternode {
             bytes8(0) != id &&
             bytes8(0) == ids[msg.sender] &&
             bytes32(0) == nodes[id].id1 &&
-            msg.value == etzPerNode
+            msg.value == hkdPerNode
         );
         bytes32[2] memory input;
         bytes32[1] memory output;
@@ -90,7 +90,7 @@ contract Masternode {
         lastId = id;
         count += 1;
         nodeAddressToId[account] = id;
-        account.transfer(etzMin);
+        account.transfer(hkdMin);
         emit join(id, msg.sender);
     }
 
@@ -117,7 +117,7 @@ contract Masternode {
                 msg.value == 0 &&
                 bytes8(0) != id &&
                 bytes32(0) != id1 &&
-                address(this).balance >= (etzPerNode - etzMin) &&
+                address(this).balance >= (hkdPerNode - hkdMin) &&
                 count > 0
             );
             
@@ -158,7 +158,7 @@ contract Masternode {
             count -= 1;
             emit quit(id, msg.sender);
             if(notGenesisNode){
-                msg.sender.transfer(etzPerNode - etzMin);
+                msg.sender.transfer(hkdPerNode - hkdMin);
             }
         }
 

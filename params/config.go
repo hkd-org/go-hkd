@@ -1,18 +1,18 @@
-// Copyright 2016 The go-etherzero Authors
-// This file is part of the go-etherzero library.
+// Copyright 2016 The go-hkd Authors
+// This file is part of the go-hkd library.
 //
-// The go-etherzero library is free software: you can redistribute it and/or modify
+// The go-hkd library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-etherzero library is distributed in the hope that it will be useful,
+// The go-hkd library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-etherzero library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-hkd library. If not, see <http://www.gnu.org/licenses/>.
 
 package params
 
@@ -51,7 +51,7 @@ var TrustedCheckpoints = map[common.Hash]*TrustedCheckpoint{
 var (
 	DevoteChainConfig = &ChainConfig{
 		ChainID:        big.NewInt(209),
-		EtherzeroBlock: big.NewInt(0),
+		HkdBlock: big.NewInt(0),
 		HomesteadBlock: big.NewInt(0),
 		DAOForkBlock:   nil,
 		DAOForkSupport: false,
@@ -105,7 +105,7 @@ var (
 	// RinkebyChainConfig contains the chain parameters to run a node on the Rinkeby test network.
 	RinkebyChainConfig = &ChainConfig{
 		ChainID:             big.NewInt(4),
-		EtherzeroBlock:      big.NewInt(1),
+		HkdBlock:      big.NewInt(1),
 		HomesteadBlock:      big.NewInt(1),
 		DAOForkBlock:        nil,
 		DAOForkSupport:      true,
@@ -203,7 +203,7 @@ type ChainConfig struct {
 	ChainID *big.Int `json:"chainId"` // chainId identifies the current chain and is used for replay protection
 
 	HomesteadBlock *big.Int `json:"homesteadBlock,omitempty"` // Homestead switch block (nil = no fork, 0 = already homestead)
-	EtherzeroBlock *big.Int `json:"EtherzeroBlock,omitempty"` // Etherzero switch block (nil = no fork, 0 = already on Etherzero)
+	HkdBlock *big.Int `json:"HkdBlock,omitempty"` // Hkd switch block (nil = no fork, 0 = already on Hkd)
 
 	DAOForkBlock   *big.Int `json:"daoForkBlock,omitempty"`   // TheDAO hard-fork switch block (nil = no fork)
 	DAOForkSupport bool     `json:"daoForkSupport,omitempty"` // Whether the nodes supports or opposes the DAO hard-fork
@@ -313,13 +313,13 @@ func (c *ChainConfig) IsByzantium(num *big.Int) bool {
 	return isForked(c.ByzantiumBlock, num)
 }
 
-// IsEtherzero returns whether num is either equal to the Etherzero masternode fork block or greater.
-func (c *ChainConfig) IsEtherzero(num *big.Int) bool {
-	return isForked(c.EtherzeroBlock, num)
+// IsHkd returns whether num is either equal to the Hkd masternode fork block or greater.
+func (c *ChainConfig) IsHkd(num *big.Int) bool {
+	return isForked(c.HkdBlock, num)
 }
 
 func (c *ChainConfig) IsPreSharding(num *big.Int) bool {
-	return isForked(c.EtherzeroBlock, num)
+	return isForked(c.HkdBlock, num)
 }
 
 // IsConstantinople returns whether num is either equal to the Constantinople fork block or greater.

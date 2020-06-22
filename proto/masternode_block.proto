@@ -6,7 +6,7 @@ import "proto/attestation.proto";
 
 option go_package = "github.com/hkd-org/go-hkd/proto";
 
-// The Etherzero 2.0 masternode block.
+// The Hkd 2.0 masternode block.
 message MasternodeBlock {
     // Masternode chain slot that this block represents.
     uint64 slot = 1;
@@ -24,12 +24,12 @@ message MasternodeBlock {
     bytes signature = 5 [(gogoproto.moretags) = "ssz-size:\"96\""];
 }
 
-// The block body of an Etherzero 2.0 masternode block.
+// The block body of an Hkd 2.0 masternode block.
 message MasternodeBlockBody {
     // The validators RANDAO reveal 96 byte value.
     bytes randao_reveal = 1 [(gogoproto.moretags) = "ssz-size:\"96\""];
 
-    // A reference to the Etherzero 1.x chain.
+    // A reference to the Hkd 1.x chain.
     Eth1Data eth1_data = 2;
 
     // 32 byte field of arbitrary data. This field may contain any data and
@@ -83,7 +83,7 @@ message AttesterSlashing {
     IndexedAttestation attestation_2 = 2;
 }
 
-// Deposit into the Etherzero 2.0 from the Etherzero 1.x deposit contract.
+// Deposit into the Hkd 2.0 from the Hkd 1.x deposit contract.
 message Deposit {
     message Data {
         // 48 byte BLS public key of the validator.
@@ -141,7 +141,7 @@ message Transfer {
     bytes signature = 7 [(gogoproto.moretags) = "ssz-size:\"96\""];
 }
 
-// Eth1Data represents references to the Etherzero 1.x deposit contract.
+// Eth1Data represents references to the Hkd 1.x deposit contract.
 message Eth1Data {
     // The 32 byte deposit tree root for the last deposit included in this
     // block.
@@ -151,7 +151,7 @@ message Eth1Data {
     // including the deposits in this block.
     uint64 deposit_count = 2;
 
-    // The 32 byte block hash of the Etherzero 1.x block considered for deposit
+    // The 32 byte block hash of the Hkd 1.x block considered for deposit
     // inclusion.
     bytes block_hash = 3 [(gogoproto.moretags) = "ssz-size:\"32\""];
 }

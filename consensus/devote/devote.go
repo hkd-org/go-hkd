@@ -1,18 +1,18 @@
-// Copyright 2018 The go-etherzero Authors
-// This file is part of the go-etherzero library.
+// Copyright 2018 The go-hkd Authors
+// This file is part of the go-hkd library.
 //
-// The go-etherzero library is free software: you can redistribute it and/or modify
+// The go-hkd library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-etherzero library is distributed in the hope that it will be useful,
+// The go-hkd library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-etherzero library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-hkd library. If not, see <http://www.gnu.org/licenses/>.
 
 // Package devote implements the proof-of-stake consensus engine.
 package devote
@@ -54,7 +54,7 @@ const (
 )
 
 var (
-	etherzeroBlockReward = big.NewInt(0.3375e+18) // Block reward in wei to masternode account when successfully mining a block
+	hkdBlockReward = big.NewInt(0.3375e+18) // Block reward in wei to masternode account when successfully mining a block
 	rewardToCommunity    = big.NewInt(0.1125e+18) // Block reward in wei to community account when successfully mining a block
 	rewardToSharding     = "12000000000000000000" // Block reward in wei to Masternode Sharding account when successfully mining a block
 
@@ -272,7 +272,7 @@ func (d *Devote) Prepare(chain consensus.ChainReader, header *types.Header) erro
 // reward.  The devote consensus allowed uncle block .
 func AccumulateRewards(govAddress common.Address, state *state.StateDB, header *types.Header, uncles []*types.Header) {
 	// Select the correct block reward based on chain progression
-	blockReward := etherzeroBlockReward
+	blockReward := hkdBlockReward
 
 	// Accumulate the rewards for the Masternode and any included uncles
 	reward := new(big.Int).Set(blockReward)
@@ -361,7 +361,7 @@ func (d *Devote) Author(header *types.Header) (common.Address, error) {
 }
 
 // verifyHeader checks whether a header conforms to the consensus rules of the
-// stock Etherzero devote engine.
+// stock Hkd devote engine.
 func (d *Devote) VerifyHeader(chain consensus.ChainReader, header *types.Header, seal bool) error {
 	return d.verifyHeader(chain, header, nil)
 }

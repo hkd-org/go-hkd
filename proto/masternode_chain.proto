@@ -14,7 +14,7 @@ option go_package = "github.com/hkd-org/go-hkd/proto";
 
 // Masternode chain API
 //
-// The masternode chain API can be used to access data relevant to the Etherzero 2.0
+// The masternode chain API can be used to access data relevant to the Hkd 2.0
 // phase 0 masternode chain.
 service MasternodeChain {
     // TODO(preston): Batch requests?
@@ -278,7 +278,7 @@ message GetValidatorsRequest {
 message Validators {
     // Epoch which the state was considered to determine the active validator 
     // set. This field is not optional. Zero value epoch indicates the validator
-    // set is from the Etherzero 2.0 genesis set.
+    // set is from the Hkd 2.0 genesis set.
     uint64 epoch = 1;
 
     repeated Validator validators = 2;

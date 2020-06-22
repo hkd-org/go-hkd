@@ -10,11 +10,11 @@ fi
 # Create fake Go workspace if it doesn't exist yet.
 workspace="$PWD/build/_workspace"
 root="$PWD"
-ethdir="$workspace/src/github.com/etherzero"
-if [ ! -L "$ethdir/go-etherzero" ]; then
+ethdir="$workspace/src/github.com/hkd"
+if [ ! -L "$ethdir/go-hkd" ]; then
     mkdir -p "$ethdir"
     cd "$ethdir"
-    ln -s ../../../../../. go-etherzero
+    ln -s ../../../../../. go-hkd
     cd "$root"
 fi
 
@@ -23,8 +23,8 @@ GOPATH="$workspace"
 export GOPATH
 
 # Run the command inside the workspace.
-cd "$ethdir/go-etherzero"
-PWD="$ethdir/go-etherzero"
+cd "$ethdir/go-hkd"
+PWD="$ethdir/go-hkd"
 
 # Launch the arguments with the configured environment.
 exec "$@"

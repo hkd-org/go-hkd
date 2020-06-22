@@ -32,14 +32,14 @@ import (
 const (
 	eth62 = 62
 	eth63 = 63
-	etz64 = 64
+	hkd64 = 64
 )
 
 // ProtocolName is the official short name of the protocol used during capability negotiation.
-var ProtocolName = "etz"
+var ProtocolName = "hkd"
 
 // ProtocolVersions are the supported versions of the eth protocol (first is primary).
-var ProtocolVersions = []uint{etz64, eth63, eth62}
+var ProtocolVersions = []uint{hkd64, eth63, eth62}
 
 // ProtocolLengths are the number of implemented message corresponding to different protocol versions.
 var ProtocolLengths = []uint64{35, 17, 8}
